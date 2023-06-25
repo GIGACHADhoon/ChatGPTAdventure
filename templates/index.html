@@ -7,8 +7,9 @@
     <h1 class="text-center">Chat GPT-Journey</h1>
       <img src="{{ img_url }}" class="img-fluid rounded mx-auto d-block" alt="My Image">
       <p class="text-center">{{text}}</p>
+      {% for button_name, message in button_messages.items() %}
         <form method = "POST">
-          {% for button_name, message in button_messages.items() %}
+          
           <div class="mb-2">
             <button name="button_name" value="{{ button_name }}" class="btn btn-primary">{{ message }}</button>
           </div>
@@ -16,6 +17,6 @@
             {% if button_states[button_name] %}
               <p class="text-center">{{ message }}</p>
             {% endif %}
-          {% endfor %}
+        {% endfor %}
     {% endblock %}
 </html>

@@ -14,7 +14,7 @@ openai.api_key = getenv('api_key')
 
 # Create a new Flask app and set the secret key
 app = Flask(__name__)
-app.secret_key = "mysecretkey"
+app.secret_key = getenv("secret_key")
 
 # Define a function to generate an image using the OpenAI API
 def get_img(prompt):
